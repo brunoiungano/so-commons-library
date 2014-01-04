@@ -9,3 +9,8 @@ makefile
 *.a
 Release
 Debug
+
+#Gradle plugin
+.gradle
+.gradletasknamecache
+build/

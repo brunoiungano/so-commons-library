@@ -17,7 +17,7 @@
 #ifndef LIST_H_
 #define LIST_H_
 
-	#include "node.h"
+	#include "commons/collections/node.h"
 	#include <stdbool.h>
 
 	typedef struct {

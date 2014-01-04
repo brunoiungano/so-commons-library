@@ -14,26 +14,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef QUEUE_H_
-#define QUEUE_H_
+#include "commons/txt.h"
 
-	#include "list.h"
+#include <stdio.h>
 
-	typedef struct {
-		t_list* elements;
-	} t_queue;
 
-	t_queue *queue_create();
-	void queue_destroy(t_queue *);
-	void queue_destroy_and_destroy_elements(t_queue*, void(*element_destroyer)(void*));
+FILE* txt_open_for_append(char* path) {
+	return fopen(path, "a");
+}
 
-	void queue_push(t_queue *, void *element);
-	void *queue_pop(t_queue *);
-	void *queue_peek(t_queue *);
-	void queue_clean(t_queue *);
-	void queue_clean_and_destroy_elements(t_queue *, void(*element_destroyer)(void*));
+void txt_write_in_file(FILE* file, char* bytes) {
+	fprintf(file, "%s", bytes);
+	fflush(file);
+}
 
-	int queue_size(t_queue *);
-	int queue_is_empty(t_queue *);
+void txt_write_in_stdout(char* string) {
+	printf("%s", string);
+	fflush(stdout);
+}
 
-#endif /*QUEUE_H_*/
+void txt_close_file(FILE* file) {
+	fclose(file);
+}

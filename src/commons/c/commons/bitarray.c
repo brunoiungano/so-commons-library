@@ -15,7 +15,7 @@
  */
 
 #include <stdlib.h>
-#include "bitarray.h"
+#include "commons/bitarray.h"
 
 /*
  * @NAME: bitarray_create

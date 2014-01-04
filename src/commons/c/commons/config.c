@@ -19,9 +19,9 @@
 #include <string.h>
 #include <sys/stat.h>
 
-#include "config.h"
-#include "string.h"
-#include "collections/dictionary.h"
+#include "commons/config.h"
+#include "commons/string.h"
+#include "commons/collections/dictionary.h"
 
 /*
  * @NAME: config_create

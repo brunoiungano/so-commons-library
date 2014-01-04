@@ -13,9 +13,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "temporal.h"
-#include "error.h"
-#include "string.h"
+#include "commons/temporal.h"
+#include "commons/error.h"
+#include "commons/string.h"
 
 #include <stdlib.h>
 #include <time.h>

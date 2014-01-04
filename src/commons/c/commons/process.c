@@ -14,25 +14,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "txt.h"
 
-#include <stdio.h>
+#include "commons/process.h"
 
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/syscall.h>
 
-FILE* txt_open_for_append(char* path) {
-	return fopen(path, "a");
+unsigned int process_get_thread_id() {
+	return syscall(SYS_gettid);
 }
 
-void txt_write_in_file(FILE* file, char* bytes) {
-	fprintf(file, "%s", bytes);
-	fflush(file);
-}
-
-void txt_write_in_stdout(char* string) {
-	printf("%s", string);
-	fflush(stdout);
-}
-
-void txt_close_file(FILE* file) {
-	fclose(file);
+unsigned int process_getpid() {
+	return getpid();
 }

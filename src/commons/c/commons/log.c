@@ -14,13 +14,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "log.h"
+#include "commons/log.h"
 
-#include "temporal.h"
-#include "error.h"
-#include "string.h"
-#include "txt.h"
-#include "process.h"
+#include "commons/temporal.h"
+#include "commons/error.h"
+#include "commons/string.h"
+#include "commons/txt.h"
+#include "commons/process.h"
 
 #include <stdlib.h>
 #include <stdbool.h>

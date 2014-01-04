@@ -14,17 +14,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef QUEUE_H_
+#define QUEUE_H_
 
-#include "process.h"
+	#include "commons/collections/list.h"
 
-#include <sys/types.h>
-#include <unistd.h>
-#include <sys/syscall.h>
+	typedef struct {
+		t_list* elements;
+	} t_queue;
 
-unsigned int process_get_thread_id() {
-	return syscall(SYS_gettid);
-}
+	t_queue *queue_create();
+	void queue_destroy(t_queue *);
+	void queue_destroy_and_destroy_elements(t_queue*, void(*element_destroyer)(void*));
 
-unsigned int process_getpid() {
-	return getpid();
-}
+	void queue_push(t_queue *, void *element);
+	void *queue_pop(t_queue *);
+	void *queue_peek(t_queue *);
+	void queue_clean(t_queue *);
+	void queue_clean_and_destroy_elements(t_queue *, void(*element_destroyer)(void*));
+
+	int queue_size(t_queue *);
+	int queue_is_empty(t_queue *);
+
+#endif /*QUEUE_H_*/
